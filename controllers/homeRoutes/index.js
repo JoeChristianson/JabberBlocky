@@ -1,9 +1,11 @@
 const { Post,User } = require('../../models');
 const postRoutes = require("./post.js")
+const loginRoutes = require("./login.js")
 const router = require('express').Router();
+const newPostRoutes = require("./newpost.js")
 
-// router.use("/login",loginRoutes)
-// router.use("/stocks", stocksRoutes)
+router.use("/login",loginRoutes)
+router.use("/newpost",newPostRoutes)
 router.use("/post",postRoutes)
 
 router.get("/",async (req,res)=>{
