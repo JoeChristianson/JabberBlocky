@@ -1,0 +1,7 @@
+<main>
+    <button id="new-post-btn">New Post</button>
+    {{#each posts as |post|}}
+    {{!-- {{post.dataValues.text}} --}}
+    {{> post}}
+    {{/each}}
+</main>

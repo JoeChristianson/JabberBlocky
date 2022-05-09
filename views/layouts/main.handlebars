@@ -16,7 +16,25 @@
 </head>
 <body>
    <header>
-       <div></div>
+       <nav>
+           <ul>
+               <li id="homeBtn">
+                   Home
+               </li>
+               {{#if loggedIn}}
+                <li id="dashboardBtn">
+                   Dashboard
+               </li>
+                <li id="logoutBtn">
+                   Logout
+               </li>
+                {{else}}
+                <li id="loginBtn">
+                   Login/Register
+               </li>
+               {{/if}}
+           </ul>
+       </nav>
        <h1>
    JabberBlocky 
    </h1>
@@ -29,4 +47,5 @@
    </header>
    {{{body}}} 
 </body>
+<script src="./js/nav.js"></script>
 </html>

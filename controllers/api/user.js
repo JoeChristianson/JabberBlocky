@@ -43,7 +43,7 @@ router.post('/login',async (req,res)=>{
     }
 })
 
-router.post("/logout",(req,res)=>{
+router.get("/logout",(req,res)=>{
     console.log("logging out")
     req.session.save(async ()=>{
         req.session.loggedIn = false;
