@@ -5,11 +5,12 @@ const {Comment} = require("../../models")
 
 router.get("/",async (req,res)=>{
     try{
-        const comments = Comment.findAll({
+        const comments = await Comment.findAll({
             where:{
-                post_id:req.body.post_id
+                post_id:req.body.postId
             }
-        })
+        });
+        res.status(200).json(comments)
     }catch(err){
         res.status(500).json(err)
     }
@@ -19,7 +20,7 @@ router.get("/",async (req,res)=>{
 
 router.post("/",async (req,res)=>{
     try{
-        const newComment = Comment.create({
+        const newComment = await Comment.create({
             user_id:req.session.userId,
             post_id:req.body.postId,
             text:req.body.text
@@ -34,7 +35,7 @@ router.post("/",async (req,res)=>{
 
 router.put("/",async (req,res)=>{
     try{
-        const updatedComment = Comment.update({
+        const updatedComment = await Comment.update({
             text:req.body.text
         },{
             where:{
@@ -44,6 +45,19 @@ router.put("/",async (req,res)=>{
         res.status(200).json(updatedComment)
     }catch(err){
         res.status(500).json()
+    }
+})
+
+router.delete("/",async (req,res)=>{
+    try{
+        const deletedComment = await Comment.destroy({
+            where:{
+                id:req.body.id
+            }
+        });
+        res.status(200).json(deletedComment)
+    }catch(err){
+        res.status(500).json(err)
     }
 })
 
