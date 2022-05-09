@@ -1,1 +1,6 @@
-Hello World
+<main>
+    {{#each posts as |post|}}
+    {{!-- {{post.dataValues.text}} --}}
+    {{> post}}
+    {{/each}}
+</main>
