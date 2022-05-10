@@ -3,7 +3,6 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
     position: sticky;
     top:0
 }
@@ -11,6 +10,7 @@ header{
 header>h1{
     font-size: 3rem;
     color: white;
+    padding-left:1rem
 }
 
 ul{
@@ -20,8 +20,14 @@ ul{
 }
 
 li{
-    margin: .5em;
+    padding:1.5rem;
+    cursor: pointer;
 }
+
+li:hover{
+    background-color:hsl(208, 100%, 70%) ;
+}
+
 main{
     display: flex;
     flex-direction: column;
@@ -31,11 +37,13 @@ main{
 main>article{
     margin:1em;
     padding: 1em;
-    width: 80%;
+    width: 80%;    
+    background-color: rgba(240, 248, 255, 0.767);
+    box-shadow: 1px 1px 1px 1px rgba(197, 204, 209, 0.767);
 }
 
 main>article:hover{
-    background-color: aliceblue;
+    background-color: rgb(225, 238, 250);
 }
 
 article>h2{
@@ -76,7 +84,16 @@ article>p{
 
 .new-post-form{
     width:400px;
-    margin:auto
+    margin:auto;
+    margin-top:40px;
+}
+
+.new-post-form input{
+    width: 340px;
+}
+
+.post-listing{
+
 }
 
 .form-group{
@@ -89,6 +106,60 @@ article>p{
     margin:auto
 }
 
+.form-group.submit{
+    width: 340px;
+    float: right;
+}
+
 .login-section,.register-section{
     margin:30px
+}
+
+.comment-number{
+    text-align: right;
+    margin-right:40px;
+    margin-top: 10px;
+}
+
+button,#submit{
+    margin-top: 1rem;
+    background-color: white;
+    padding: 0.5em 1em;
+    cursor: pointer;
+
+}
+
+textarea{
+    resize: none;
+    display: block;
+    width: 340px;
+    height: 200px;
+}
+
+.comments{
+    width:50%;
+    margin-bottom:20px
+}
+
+#add-comment-form{
+
+}
+
+.left{
+    text-align:left;
+    margin-left:0
+}
+
+.comments h3{
+    font-weight: bold;
+    margin-left:20px
+}
+
+.comments p{
+    border:2px solid rgba(0, 0, 0, 0.144);
+    padding:1.5em
+}
+
+.pointer{
+    cursor: pointer;
 }

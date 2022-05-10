@@ -1,6 +1,6 @@
 const loginBtn = $(".loginBtn")
 const logoutBtn = $("#logoutBtn");
-const homeBtn = $("#homeBtn");
+const homeBtn = $(".homeBtn");
 const dashboardBtn = $("#dashboardBtn");
 const newPostBtn = $("#new-post-btn")
 

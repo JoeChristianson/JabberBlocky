@@ -1,4 +1,4 @@
-const { Post,User } = require('../../models');
+const { Post,User,Comment } = require('../../models');
 const postRoutes = require("./post.js")
 const loginRoutes = require("./login.js")
 const router = require('express').Router();
@@ -12,10 +12,13 @@ router.use("/dashboard",dashboardRoutes)
 
 router.get("/",async (req,res)=>{
     const local = true;
-    const posts = await Post.findAll({include:{model:User},
-        order: [
-        ['createdAt', 'DESC'],
-    ],})
+    const posts = await Post.findAll({
+        include:[{model:User},{model:Comment}],
+    order:[
+        ['id', 'DESC'],
+]
+})
+    console.log(posts)
     res.render('homepage',{loggedIn:req.session.loggedIn,posts});
 })
 

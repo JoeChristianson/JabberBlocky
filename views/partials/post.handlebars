@@ -1,4 +1,4 @@
-<article class="post-listing" data-post-id="{{dataValues.id}}">
+<article class="post-listing pointer" data-post-id="{{dataValues.id}}">
     <h5 class="date">{{dataValues.createdAt}}</h5>
     <h2>{{dataValues.title}}</h2>
         <h4>
@@ -8,4 +8,5 @@
     <p>
     {{dataValues.text}}
     </p>
+    <h5 class="comment-number">Comments({{comments.length}})</h5>
 </article>

@@ -23,7 +23,7 @@ form.on("submit",async (e)=>{
     commentSection.append(`
     <article>
         <h3>${data.user_name} comments:</h3>
-        <h5>created: ${new Date()}</h5>
+        <h5 class="date ">${new Date()}</h5>
         <p>${comment.val()}</p>
     </article>
     

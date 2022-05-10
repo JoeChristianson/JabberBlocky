@@ -1,16 +1,26 @@
 <main>
+<article class="post-listing" data-post-id="{{postDetails.dataValues.id}}">
+    <h5 class="date">{{postDetails.dataValues.createdAt}}</h5>
+    <h2>{{postDetails.dataValues.title}}</h2>
+        <h4>
+        by: {{postDetails.user.dataValues.user_name}}
 
-<h2>
+        </h4>
+    <p>
+    {{postDetails.dataValues.text}}
+    </p>
+    <h5 class="comment-number">Comments({{comments.length}})</h5>
+</article>
+{{!-- <h2>
 {{postDetails.dataValues.title}}
 </h2>
-{{postDetails.dataValues.text}}
+{{postDetails.dataValues.text}} --}}
 
 <section class="comments">
-
 {{#each comments as |comment|}}
     <article>
+    <h5 class="date left">{{comment.dataValues.createdAt}}</h5>
     <h3>{{comment.user.dataValues.user_name}} comments:</h3>
-    <h5 class="date">created: {{comment.dataValues.createdAt}}</h5>
     <p>{{comment.dataValues.text}}</p>
     </article>
 {{/each}}
@@ -18,7 +28,7 @@
 {{#if loggedIn}}
 <form id="add-comment-form">
     <textarea name="comment" id="new-comment"></textarea>
-    <input type="submit">
+    <input id="submit" type="submit">
 </form>
 {{else}}
 <button class="loginBtn">
