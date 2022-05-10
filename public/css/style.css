@@ -1,5 +1,5 @@
 header{
-    background-color: blue;
+    background-color: hsl(208, 100%, 80%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,6 +13,15 @@ header>h1{
     color: white;
 }
 
+ul{
+    color: white;
+    display: flex;
+    font-size: 1.3rem;
+}
+
+li{
+    margin: .5em;
+}
 main{
     display: flex;
     flex-direction: column;
@@ -20,20 +29,66 @@ main{
 }
 
 main>article{
-    border: 1px solid black;
     margin:1em;
     padding: 1em;
     width: 80%;
 }
 
+main>article:hover{
+    background-color: aliceblue;
+}
+
 article>h2{
     font-size: 2em;
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 0.6rem;
 }
 
 article>h5{
-    text-align: center;
+    text-align: left;
     font-style: italic;
     margin-bottom: 1em;
+    margin-left:20px;
+    color: hsla(208, 25%, 37%, 0.548);
+}
+
+article>h4{
+    text-align: center;
+}
+
+article>p{
+    width:80%;
+    text-align: center;
+
+    margin:auto;
+    margin-top: 1.5rem;
+}
+
+#login-page-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+#login-page-wrapper h2{
+    font-size: 1.7rem;
+    margin-bottom: 3rem;
+}
+
+.new-post-form{
+    width:400px;
+    margin:auto
+}
+
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:1rem;
+}
+
+.form-group>button{
+    margin:auto
+}
+
+.login-section,.register-section{
+    margin:30px
 }
