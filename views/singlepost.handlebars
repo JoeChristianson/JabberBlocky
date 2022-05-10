@@ -10,7 +10,7 @@
 {{#each comments as |comment|}}
     <article>
     <h3>{{comment.user.dataValues.user_name}} comments:</h3>
-    <h5>created: {{comment.dataValues.createdAt}}</h5>
+    <h5 class="date">created: {{comment.dataValues.createdAt}}</h5>
     <p>{{comment.dataValues.text}}</p>
     </article>
 {{/each}}
@@ -21,9 +21,12 @@
     <input type="submit">
 </form>
 {{else}}
+<button class="loginBtn">
 Log-in or Register to Make Comments
+</button>
 {{/if}}
 
 </main>
 <script src="../js/innernav.js"></script>
 <script src="../js/add-comment.js"></script>
+<script src="../js/reformatDates.js"></script>

@@ -1,4 +1,4 @@
-const loginBtn = $("#loginBtn")
+const loginBtn = $(".loginBtn")
 const logoutBtn = $("#logoutBtn");
 const homeBtn = $("#homeBtn");
 const dashboardBtn = $("#dashboardBtn");

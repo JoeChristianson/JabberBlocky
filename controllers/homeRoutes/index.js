@@ -12,8 +12,10 @@ router.use("/dashboard",dashboardRoutes)
 
 router.get("/",async (req,res)=>{
     const local = true;
-    const posts = await Post.findAll({include:{model:User}})
-    console.log(posts)
+    const posts = await Post.findAll({include:{model:User},
+        order: [
+        ['createdAt', 'DESC'],
+    ],})
     res.render('homepage',{loggedIn:req.session.loggedIn,posts});
 })
 

@@ -2,9 +2,9 @@ const router = require("express").Router()
 const req = require("express/lib/request")
 const {Post} = require("../../models")
 
-router.get("/:id",async (req,res)=>{
+router.get("/",async (req,res)=>{
     try{
-        const post = await Post.findByPk(req.params.id);
+        const post = await Post.findByPk(req.body.id);
         res.status(200).json(post)
     }catch(err){
         res.status(500).json(err)
