@@ -6,7 +6,7 @@ router.get("/:id",async (req,res)=>{
         include:{model:Comment,include:{model:User}}
     })
     console.log(postDetails)
-    res.status(200).render("singlepost",{comments:postDetails.comments,postDetails,user:req.session.params})
+    res.status(200).render("singlepost",{comments:postDetails?.comments,postDetails,user:req.session.params,loggedIn:req.session.loggedIn})
 })
 
 module.exports = router;

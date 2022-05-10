@@ -8,7 +8,7 @@ router.get("/",async(req,res)=>{
                 user_id:req.session.userId
             },include:{model:User}
         })
-        res.status(200).render("dashboard",{posts:userPosts})
+        res.status(200).render("dashboard",{posts:userPosts,loggedIn:req.session.loggedIn})
     }catch(err){
         res.status(500).json(err)
     }

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Comment} = require("../../models")
+const {Comment,User} = require("../../models")
 
 // Get all comments for a post
 
@@ -20,12 +20,15 @@ router.get("/",async (req,res)=>{
 
 router.post("/",async (req,res)=>{
     try{
+        console.log(req.body)
         const newComment = await Comment.create({
             user_id:req.session.userId,
             post_id:req.body.postId,
             text:req.body.text
         });
-        res.status(200).json(newComment)
+        const user = await User.findByPk(req.session.userId);
+        console.log(user)
+        res.status(200).json(user)
     }catch(err){
         res.status(500).json(err)
     }

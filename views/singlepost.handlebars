@@ -1,10 +1,29 @@
+<main>
+
 <h2>
 {{postDetails.dataValues.title}}
-a
 </h2>
+{{postDetails.dataValues.text}}
 
+<section class="comments">
 
-
-{{#each comment}}
-    
+{{#each comments as |comment|}}
+    <article>
+    <h3>{{comment.user.dataValues.user_name}} comments:</h3>
+    <h5>created: {{comment.dataValues.createdAt}}</h5>
+    <p>{{comment.dataValues.text}}</p>
+    </article>
 {{/each}}
+</section>
+{{#if loggedIn}}
+<form id="add-comment-form">
+    <textarea name="comment" id="new-comment"></textarea>
+    <input type="submit">
+</form>
+{{else}}
+Log-in or Register to Make Comments
+{{/if}}
+
+</main>
+<script src="../js/innernav.js"></script>
+<script src="../js/add-comment.js"></script>

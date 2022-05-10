@@ -19,4 +19,5 @@ form.on("submit",async e=>{
             'Content-Type': 'application/json'
         }
     })
+    window.location = "./dashboard"
 })
