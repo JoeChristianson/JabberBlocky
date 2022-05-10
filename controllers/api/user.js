@@ -9,8 +9,11 @@ router.post("/",async (req,res)=>{
             email:req.body.email,
             password:req.body.password
         });
-
-        res.json(newUser)
+        req.session.save(async ()=>{
+            req.session.loggedIn = true;
+            req.session.userId = newUser.getDataValue("id");
+            res.status(200).json({user:newUser,message: 'You are now logged in'})
+        })
     }catch(err){
         res.status(500).json(err)
     }
