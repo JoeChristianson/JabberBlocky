@@ -176,3 +176,19 @@ textarea{
 .pointer{
     cursor: pointer;
 }
+
+.post-listing button, .post-listing textarea{
+    margin:auto;
+    text-align: center;
+}
+
+.center{
+    margin:auto;
+    text-align: center;
+}
+
+button.center{
+    margin-left: 50%;
+    margin-top: 10px;
+    transform: translateX(-50%);
+}

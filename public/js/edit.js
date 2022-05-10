@@ -15,7 +15,9 @@ editBtn.on("click",e=>{
     const id = e.target.dataset.postId
     const inp = $("<textarea>");
     const btn = $("<button>")
-    const cont = content.html()
+    const cont = content.html();
+    btn.addClass("center")
+    inp.addClass("center")
     inp.html(cont);
     postListing.append(inp)
     postListing.append(btn)
