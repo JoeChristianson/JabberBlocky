@@ -4,7 +4,8 @@ header{
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    top:0
+    top:0;
+    z-index: 10;
 }
 
 header>h1{
@@ -93,7 +94,19 @@ article>p{
 }
 
 .post-listing{
+    position: relative;
+}
 
+.alter{
+    position: absolute;
+    top:5px;
+    right:5px
+}
+
+.alter>span{
+    text-decoration: underline;
+    margin-left: 15px;
+    cursor: pointer;
 }
 
 .form-group{

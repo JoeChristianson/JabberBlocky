@@ -36,6 +36,7 @@ router.get("/all",async(req,res)=>{
 
 router.put("/edit",async (req,res)=>{
     try{
+        console.log(req.body)
         const updatedPost = await Post.update({
             text:req.body.text
         },{
@@ -49,11 +50,12 @@ router.put("/edit",async (req,res)=>{
     }
 })
 
-router.delete("/",async (req,res)=>{
+router.delete("/:id",async (req,res)=>{
     try{
+        console.log(req.body)
         const deleted = Post.destroy({
             where:{
-                id:req.body.id
+                id:req.params.id
             }
         })
         res.status(200).json(deleted)

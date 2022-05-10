@@ -1,5 +1,8 @@
 <main>
 <article class="post-listing" data-post-id="{{postDetails.dataValues.id}}">
+    <div class="alter">
+        <span id="edit" data-post-id="{{postDetails.dataValues.id}}">edit</span><span id="delete" data-post-id="{{postDetails.dataValues.id}}">delete</span>
+    </div>
     <h5 class="date">{{postDetails.dataValues.createdAt}}</h5>
     <h2>{{postDetails.dataValues.title}}</h2>
         <h4>
@@ -40,3 +43,4 @@ Log-in or Register to Make Comments
 <script src="../js/innernav.js"></script>
 <script src="../js/add-comment.js"></script>
 <script src="../js/reformatDates.js"></script>
+<script src="../js/edit.js"></script>
